@@ -13,22 +13,24 @@ interface Post {
 
 const PostsPage = ({posts}: PostsPageProps) => {
     return (
-        <div className="text-center">
-            <h1>Posts</h1>
-            {posts.map((post) => (
-                <div
-                    key={post.id}
-                    className="border rounded-md p-4 shadow-md hover:shadow-lg transition-shadow"
-                >
-                    <h2 className="text-xl font-semibold">{post.title}</h2>
-                    <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
+        <div className="p-4">
+            <h1 className="text-center text-2xl font-bold mb-6">Posts</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {posts.map((post) => (
                     <div
-                        dangerouslySetInnerHTML={{
-                            __html: post.content,
-                        }}
-                    ></div>
-                </div>                
-            ))}
+                        key={post.id}
+                        className="border rounded-md p-4 shadow-md hover:shadow-lg transition-shadow"
+                    >
+                        <h2 className="text-xl font-semibold">{post.title}</h2>
+                        <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: post.content.substring(0, 350) + "..."
+                            }}
+                        ></div>
+                    </div>                
+                ))}
+            </div>
         </div>
     );
 }
