@@ -1,40 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## Blog Application
 
-## Getting Started
+### Overview
 
-First, run the development server:
+This is a simple blog application built using Next.js with the Blogger API as the data source. The application allows users to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- View a list of blog posts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- View individual post details
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Create new posts (if supported by the Blogger API)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The project demonstrates:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- Routing and dynamic pages in Next.js
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Server-side rendering (SSR) using the pages/ directory approach
 
-## Learn More
+- Data fetching from an external API (Google Blogger API)
 
-To learn more about Next.js, take a look at the following resources:
+### Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- Responsive and mobile-friendly design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Server-side rendering for SEO optimization and dynamic content updates
 
-## Deploy on Vercel
+- Modern React features (Server Components and async/await syntax)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Before running the project, ensure you have the following installed:
+
+- Node.js (version 16 or higher)
+
+- npm or yarn
+
+### Dependencies
+
+The project uses the following major dependencies:
+
+- Next.js: For building the application
+
+- React: For component-based UI
+
+- Google Blogger API: For fetching blog posts
+
+- dotenv: For managing environment variables (API key, etc.)
+
+### Setup Instructions
+
+1. #### Clone Repository
+   ```
+     git clone https://github.com/your-username/blog-app.git
+     cd blog-app
+   ```
+2. #### Install Dependencies
+   ```
+    npm install
+     or
+    yarn install
+   ```
+3. #### Set Up Environment Variables
+   
+   Create a ```.env.local``` file in the root of the project and add the following:
+   ```
+     API_KEY=your_api_key
+     BLOG_ID=your_blog_id
+   ```
+4. #### Run the Development Server
+  ```
+    npm run dev
+     or
+    yarn dev
+  ```
+### Approach
+
+- Server-Side Rendering: Used Next.js’s pages/ directory for server-side rendering to ensure the latest blog posts are fetched on every request.
+
+- API Integration: Used Google Blogger API to fetch and display blog posts. The API key is securely stored in environment variables.
+
+- Responsive Design: The UI is designed to be mobile-friendly using Tailwind CSS.
+
+- Error Handling: Implemented error handling for API requests to manage cases where the API fails or returns incomplete data.
+
+### Contact
+
+For any questions or suggestions, feel free to contact me at guelmiscortina@gmail.com.
+    
