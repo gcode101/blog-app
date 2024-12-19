@@ -55,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         );
 
         const data = await response.json();
-        const posts = data.items.map((post: any) => ({
+        const posts = data.items.map((post: Post) => ({
             id: post.id,
             title: post.title,
             published: post.published,
