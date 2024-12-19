@@ -17,7 +17,7 @@ const PostPage = ({ post }: PostProps) => {
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     Back to posts
                 </span>
-            </Link>            
+            </Link>          
             <h1 className="text-3xl font-bold text-gray-800 mb-4">{post.title}</h1>
             <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
             <div
