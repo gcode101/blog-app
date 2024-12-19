@@ -25,7 +25,7 @@ const PostsPage = ({posts}: PostsPageProps) => {
                         <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: post.content.substring(0, 350) + "..."
+                                __html: post.content.substring(0, 350) + " ..."
                             }}
                         ></div>
                     </div>                
