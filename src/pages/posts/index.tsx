@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import Link from "next/link";
 
 interface Post {
     id: string;
@@ -17,18 +18,20 @@ const PostsPage = ({posts}: PostsPageProps) => {
             <h1 className="text-center text-2xl font-bold mb-6">Posts</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {posts.map((post) => (
-                    <div
-                        key={post.id}
+                    <Link
                         className="border rounded-md p-4 shadow-md hover:shadow-lg transition-shadow"
+                        href={`posts/${post.id}`}
                     >
-                        <h2 className="text-xl font-semibold">{post.title}</h2>
-                        <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: post.content.substring(0, 350) + " ..."
-                            }}
-                        ></div>
-                    </div>                
+                        <div key={post.id}>
+                            <h2 className="text-xl font-semibold">{post.title}</h2>
+                            <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: post.content.substring(0, 350) + " ..."
+                                }}
+                            ></div>
+                        </div>  
+                    </Link>              
                 ))}
             </div>
         </div>
