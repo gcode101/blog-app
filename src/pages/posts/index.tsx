@@ -21,8 +21,9 @@ const PostsPage = ({posts}: PostsPageProps) => {
                     <Link
                         className="border rounded-md p-4 shadow-md hover:shadow-lg transition-shadow"
                         href={`posts/${post.id}`}
+                        key={post.id}
                     >
-                        <div key={post.id}>
+                        <div>
                             <h2 className="text-xl font-semibold">{post.title}</h2>
                             <p className="text-sm text-gray-500">{new Date(post.published).toLocaleDateString()}</p>
                             <div
